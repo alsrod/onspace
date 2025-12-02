@@ -32,6 +32,7 @@ body {
     gap: 30px;
     flex: 1;
     justify-content: flex-start;
+    align-items: center;
 }
 
 .nav-left a {
@@ -60,24 +61,13 @@ body {
 }
 
 .logo-image {
-    height: 50px;
+    height: 55px;
     width: auto;
     object-fit: contain;
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-}
-
-.logo-line1,
-.logo-line2 {
-    font-size: 18px;
-    font-weight: 500;
-    color: #fff;
-    letter-spacing: 0.5px;
-    font-family: "fractul-variable", sans-serif;
+    /* Adjust vertical position to center the text 'onSpace' */
+    transform: translateY(5%);
+    background: transparent;
+    mix-blend-mode: normal;
 }
 
 .nav-right {
@@ -91,6 +81,7 @@ body {
 .social-icons {
     display: flex;
     gap: 15px;
+    align-items: center;
 }
 
 .social-icons a {
@@ -188,7 +179,7 @@ body {
     }
 
     .logo-image {
-        height: 37.5px;
+        height: 41.25px;
     }
 
     .logo-line1,
@@ -238,7 +229,7 @@ body {
     }
 
     .logo-image {
-        height: 31.25px;
+        height: 34.375px;
     }
 
     .logo-line1,
@@ -270,6 +261,7 @@ html {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }

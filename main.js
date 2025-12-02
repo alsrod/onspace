@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let currentSlide = 0;
         
         function showSlide(index) {
+            if (slides.length === 0) return;
+            
             slides.forEach((slide, i) => {
                 slide.classList.remove('active');
                 if (i === index) {
@@ -54,17 +56,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         function nextSlide() {
+            if (slides.length === 0) return;
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
         }
         
-        // Auto-advance slides every 1.5 seconds
-        if (slides.length > 1) {
-            setInterval(nextSlide, 1500);
-        }
-        
         // Initialize first slide
-        showSlide(0);
+        if (slides.length > 0) {
+            showSlide(0);
+            
+            // Auto-advance slides every 1.5 seconds
+            if (slides.length > 1) {
+                setInterval(nextSlide, 1500);
+            }
+        }
     }
 
     // Mobile menu toggle (for future expansion)

@@ -38,16 +38,33 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScroll = currentScroll;
     });
 
-    // Image lazy loading enhancement
-    const heroImage = document.querySelector('.hero-image');
-    if (heroImage) {
-        heroImage.addEventListener('load', function() {
-            this.style.opacity = '1';
-        });
+    // Image slideshow
+    const slideshow = document.querySelector('.slideshow');
+    if (slideshow) {
+        const slides = slideshow.querySelectorAll('.slide');
+        let currentSlide = 0;
         
-        // Set initial opacity for fade-in effect
-        heroImage.style.opacity = '0';
-        heroImage.style.transition = 'opacity 0.5s ease-in';
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        // Auto-advance slides every 5 seconds
+        if (slides.length > 1) {
+            setInterval(nextSlide, 5000);
+        }
+        
+        // Initialize first slide
+        showSlide(0);
     }
 
     // Mobile menu toggle (for future expansion)

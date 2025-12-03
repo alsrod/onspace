@@ -68,7 +68,7 @@ body {
 }
 
 .logo-image {
-    height: 55px;
+    height: 44px;
     width: auto;
     object-fit: contain;
     background: transparent;
@@ -216,7 +216,7 @@ body {
     }
 
     .logo-image {
-        height: 41.25px;
+        height: 33px;
     }
 
     .logo-line1,
@@ -266,7 +266,7 @@ body {
     }
 
     .logo-image {
-        height: 34.375px;
+        height: 27.5px;
     }
 
     .logo-line1,

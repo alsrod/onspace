@@ -39,38 +39,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Image slideshow
-    const slideshow = document.querySelector('.slideshow');
-    if (slideshow) {
+    window.addEventListener('load', function() {
+        const slideshow = document.querySelector('.slideshow');
+        if (!slideshow) return;
+        
         const slides = slideshow.querySelectorAll('.slide');
+        if (slides.length === 0) return;
+        
         let currentSlide = 0;
         
         function showSlide(index) {
-            if (slides.length === 0) return;
-            
             slides.forEach((slide, i) => {
-                slide.classList.remove('active');
                 if (i === index) {
                     slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
                 }
             });
         }
         
         function nextSlide() {
-            if (slides.length === 0) return;
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
         }
         
         // Initialize first slide
-        if (slides.length > 0) {
-            showSlide(0);
-            
-            // Auto-advance slides every 1.5 seconds
-            if (slides.length > 1) {
-                setInterval(nextSlide, 1500);
-            }
+        showSlide(0);
+        
+        // Auto-advance slides every 1.5 seconds
+        if (slides.length > 1) {
+            setInterval(nextSlide, 1500);
         }
-    }
+    });
 
     // Mobile menu toggle (for future expansion)
     const handleResize = function() {

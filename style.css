@@ -191,11 +191,27 @@ body {
     .header {
         padding: 15px 20px;
         flex-wrap: wrap;
+        height: auto;
+        min-height: 80px;
+    }
+
+    .logo {
+        order: 1;
+        position: static;
+        transform: none;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 15px;
+        height: auto;
+    }
+
+    .logo-image {
+        height: 33px;
     }
 
     .nav-left {
         gap: 20px;
-        order: 1;
+        order: 2;
         width: 100%;
         justify-content: center;
         margin-bottom: 10px;
@@ -205,25 +221,10 @@ body {
         font-size: 12px;
     }
 
-    .logo {
-        order: 2;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        gap: 15px;
-    }
-
-    .logo-image {
-        height: 33px;
-    }
-
-    .logo-line1,
-    .logo-line2 {
-        font-size: 14px;
-    }
-
     .nav-right {
         order: 3;
+        width: 100%;
+        justify-content: center;
         gap: 15px;
     }
 
@@ -236,7 +237,7 @@ body {
     }
 
     .main-content {
-        margin-top: 100px;
+        margin-top: 120px;
     }
 
     .hero-section {
@@ -253,6 +254,16 @@ body {
 @media (max-width: 480px) {
     .header {
         padding: 12px 15px;
+        height: auto;
+        min-height: 80px;
+    }
+
+    .logo {
+        margin-bottom: 12px;
+    }
+
+    .logo-image {
+        height: 27.5px;
     }
 
     .nav-left {
@@ -261,10 +272,6 @@ body {
 
     .nav-left a {
         font-size: 11px;
-    }
-
-    .logo-image {
-        height: 27.5px;
     }
 
     .logo-line1,

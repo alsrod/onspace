@@ -131,8 +131,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: clamp(60px, 15vw, 180px);
-    font-weight: 700;
-    font-style: italic;
+    font-weight: 800;
+    font-style: normal;
     color: rgba(255, 255, 255, 0.03);
     letter-spacing: 15px;
     z-index: 2;
